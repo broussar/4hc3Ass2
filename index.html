@@ -6,9 +6,30 @@
 	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/paper.js"></script>
 	<script src="js/jquery-ui-1.10.3.custom.js"></script>
 	<script src="js/remote.js"></script>
-	<script>
+	<script type="text/paperscript" canvas="tabs-canvas">
+
+	var hitOptions = {
+		segments: true,
+		stroke: true,
+		fill: true,
+		tolerance: 5
+	};
+	var path = new Path.Circle({
+		center: view.center,
+		radius: 30,
+		strokeColor: 'red',
+		fillColor: 'red'
+		});
+	function onMouseDown (event)
+	{
+		var hitResult = project.hitTest(event.point, hitOptions);
+		console.log(hitResult.item);
+		hitResult.item.x += 3;
+	}
+
 	</script>
 	<style>
 	</style>
@@ -29,19 +50,9 @@
                 <div id="vol-control"></div>
             </div>
             <div id="main" class="main-container">
-                <div id="tab1" class="tab-container" style="position:relative; left:729px;">
-                    <p>tab heading</p>
-                    <div class="tab-content">
-                        Tab 1
-                    </div>
-                </div>
-                <div id="tab2" class="tab-container" style="position:relative; left:729px; top:-412px;">
-                    <p>tab heading</p>
-                    <div class="tab-content">
-                        Tab 2
-                    </div>
-                </div>
-
+		<canvas id="tabs-canvas" height="500" width="800">
+			Please try chrome, firefox, or the newest IE
+		</canvas>
             </div>
         </div>
     </div>

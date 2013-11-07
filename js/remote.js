@@ -23,7 +23,7 @@
       }
     });
     $( "#vol-display" ).html( $( "#vol-control" ).slider( "value" ) );
-
+/*
     $( "#tab1").draggable({ axis: "x", handle: "p",
         drag: function() {
             //console.log($(this).css("left"));
