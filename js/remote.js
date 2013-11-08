@@ -195,20 +195,20 @@ var button = document.getElementById('cn-button'),
  
   function handler(){
     if(!open){
-      this.innerHTML = "Close";
-	$(wrapper).addClass("opened-nav");
+      this.innerHTML = "Play";
+//	$(wrapper).addClass("opened-nav");
 //      classie.add(wrapper, 'opened-nav');
     }
     else{
-      this.innerHTML = "Menu";
+      this.innerHTML = "Pause";
   //  classie.remove(wrapper, 'opened-nav');
-	$(wrapper).removeClass("opened-nav");
+//	$(wrapper).removeClass("opened-nav");
     }
     open = !open;
   }
   function closeWrapper(){
     //classie.remove(wrapper, 'opened-nav');
-	$(wrapper).removeClass("opened-nav");
+//	$(wrapper).removeClass("opened-nav");
   }
  
 
