@@ -8,8 +8,13 @@
 	<link href="css/component2.css" rel="stylesheet">
 	<script src="js/modern.js"></script>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script type="text/javascript">
+		function changeScreenSize(w,h){
+			window.resizeTo(w,h);
+		}
+	</script>
 </head>
-<body>
+<body onload="changeScreenSize(1351,1400)">
     <h1>
         4HC3 Assignment 2 - TV Remote Control
     </h1>
@@ -84,6 +89,22 @@
 		<div id="tab1" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 1131px; width:10px; overflow:visible">
 			<div id="handle1" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabGuide1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 0px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
 		        <div id="content1">
+			<table id="tvguide">
+				<thead>
+					<th>8:00</th>
+					<th>8:30</th>
+					<th>9:00</th>
+					<th>9:30</th>
+					<th>10:00</th>
+				</thead>
+				<tbody>
+					<tr>asd</tr>
+					<tr>asd</tr>
+					<tr>asd</tr>
+					<tr>asd</tr>
+					<tr>asd</tr>
+				</tbody>
+			</table>
 			</div>
 		</div>	
 		<div id="tab2" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 1131px; width: 10px">
