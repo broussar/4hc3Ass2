@@ -9,136 +9,6 @@
 	<script src="js/paper.js"></script>
 	<script src="js/jquery-ui-1.10.3.custom.js"></script>
 	<script src="js/remote.js"></script>
-	<script type="text/paperscript" canvas="tabs-canvas">
-        
-    //options
-	var hitOptions = {
-		segments: true,
-		stroke: true,
-		fill: true,
-		tolerance: 5
-    };
-    //Create Tabs
-    var bg1 = new Path();
-    bg1.strokeColor = "blue";
-    bg1.fillColor = "blue";
-    bg1.add(new Point(39,0));
-    bg1.add(new Point(40,10));
-    bg1.add(new Point(10,20));
-    bg1.add(new Point(10,80));
-    bg1.add(new Point(39,90));
-    bg1.add(new Point(39,500));
-    bg1.add(new Point(1000,500));
-    bg1.add(new Point(1000,0));
-    var bg2 = new Path();
-    bg2.strokeColor = "red";
-    bg2.fillColor = "red";
-    bg2.add(new Point(40,0));
-    bg2.add(new Point(40,100));
-    bg2.add(new Point(10,110));
-    bg2.add(new Point(10,170));
-    bg2.add(new Point(40,180));
-    bg2.add(new Point(40,500));
-    bg2.add(new Point(1000,500));
-    bg2.add(new Point(1000,0));
-    var bg3 = new Path();
-    bg3.strokeColor = "purple";
-    bg3.fillColor = "purple";
-    bg3.add(new Point(41,0));
-    bg3.add(new Point(41,190));
-    bg3.add(new Point(10,200));
-    bg3.add(new Point(10,260));
-    bg3.add(new Point(41,270));
-    bg3.add(new Point(41,500));
-    bg3.add(new Point(1000,500));
-    bg3.add(new Point(1000,0));
-    var bg4 = new Path();
-    bg4.strokeColor = "yellow";
-    bg4.fillColor = "yellow";
-    bg4.add(new Point(42,0));
-    bg4.add(new Point(42,280));
-    bg4.add(new Point(10,290));
-    bg4.add(new Point(10,350));
-    bg4.add(new Point(42,360));
-    bg4.add(new Point(42,500));
-    bg4.add(new Point(1000,500));
-    bg4.add(new Point(1000,0));
-    //Create Content for tabs
-    var text = new PointText(new Point(300, 300));
-    text.fillColor = "pink";
-    text.content = "Hello World!";
-
-    //Group tabs and content
-    var tab1 = new Group({
-        children: [bg1,text]
-    });
-    var tab2 = new Group({
-        children: [bg2]
-    });
-    var tab3 = new Group({
-        children: [bg3]
-    });
-    var tab4 = new Group({
-        children: [bg4]
-    });
-    //translate individual peices
-    tab1.translate(new Point(759,0));
-    tab2.translate(new Point(759,0));
-    tab3.translate(new Point(759,0));
-    tab4.translate(new Point(759,0));
-    //State machine to show and hide content
-    //Maybe TODO use state machine
-
-    //Interaction Functions
-    var activeid, path;
-    var movePath = false;
-	function onMouseDown (event)
-    {
-        segment = path = null;
-		var hitResult = project.hitTest(event.point, hitOptions);
-        if(!hitResult) {
-            return;
-        } else {
-            //get id or check what group/layer is active.
-            path = hitResult.item.parent;
-            console.log(path.id);
-
-        }
-
-        movePath = hitResult.type == 'fill';
-        if(movePath) {
-            //project.activeLayer.addChild(hitResult.item);
-        }
-    }
-
-    function onMouseDrag(event) {
-        //may need individual x boundaries
-        if(movePath && path.position.x > 495 && event.delta.x < 0) {
-            //slides only in x direction
-            path.position.x += event.delta.x;
-        }else if(movePath && path.position.x < 1265 && event.delta.x > 0) {
-            path.position.x += event.delta.x;
-        }
-    }
-
-    function onMouseUp(event) {
-        if(path.position.x > 700)
-        {
-            //return to closed state
-            path.position.x = 1265;
-        }else if (path.position.x <= 700) {
-            //move all others to closed state
-
-            //move this to open state
-            path.position.x = 495;
-        }
-    }
-
-
-
-	</script>
-	<style>
-	</style>
 </head>
 <body>
     <h1>
@@ -156,9 +26,22 @@
                 <div id="vol-control"></div>
             </div>
             <div id="main" class="main-container">
-		<canvas id="tabs-canvas" height="500" width="800">
-			Please try chrome, firefox, or the newest IE
-		</canvas>
+		<div id="tab1" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 338px;">
+			<div id="handle1" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(http://www.building58.com/examples/images/contact_tab.gif); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 0px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
+		        <h3>Contact Everyone</h3>
+		</div>	
+		<div id="tab2" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 338px;">
+			<div id="handle2" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(http://www.building58.com/examples/images/contact_tab.gif); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 130px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
+		        <h3>Contact Everyone</h3>
+		</div>	
+		<div id="tab3" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 338px;">
+			<div id="handle3" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(http://www.building58.com/examples/images/contact_tab.gif); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 260px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
+		        <h3>Contact Everyone</h3>
+		</div>	
+		<div id="tab4" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 338px;">
+			<div id="handle4" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(http://www.building58.com/examples/images/contact_tab.gif); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 390px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
+		        <h3>Contact Everyone</h3>
+		</div>	
             </div>
         </div>
     </div>

@@ -23,56 +23,58 @@
       }
     });
     $( "#vol-display" ).html( $( "#vol-control" ).slider( "value" ) );
-/*
-    $( "#tab1").draggable({ axis: "x", handle: "p",
-        drag: function() {
-            //console.log($(this).css("left"));
-            $(this).css("z-index",0);
-        },
-        stop: function() {
-            if($(this).css("left").replace("px","") < 200){
-                $(this).css("z-index",100);
-                $("#main .tab-container").each(function(index,value) {
-                    if(parseInt($(this).css("left"),10) == 10){
-                        $(this).css("z-index",0).animate({"left":729}).delay(1000).css("z-index",10);
-                    }
-                });
-                $(this).animate({"left":10});
-                $(this).css("z-index",0);
 
-            }else{
-                $(this).animate({"left":729});
-            }
-        }
-    });
+	function closetabs(current){
 
-    $( "#tab2").draggable({ axis: "x", handle: "p",
-        drag: function() {
-            //console.log($(this).css("left"));
-            $(this).css("z-index",0);
-        },
-        stop: function() {
-            if($(this).css("left").replace("px","") < 200){
-                $(this).css("z-index",100);
-                $("#main .tab-container").each(function(index,value) {
-                    if(parseInt($(this).css("left"),10) == 10){
-                        $(this).css("z-index",0).animate({"left":729}).delay(1000).css("z-index",10);
-                    }
-                });
-                $(this).animate({"left":10});
-                $(this).css("z-index",0);
+	} 
+	$("#tab1").resizable({
+		maxWidth: 800,
+		handles: {
+			'w': '#handle1'
+		},
+		start: function () {
+			
+		},
+		stop: function () {
+			
+		}
+	});
+	$("#tab2").resizable({
+		maxWidth: 800,
+		animate: true,
+		handles: {
+			'w': '#handle2'
+		}
+	});
+	$("#tab3").resizable({
+		maxWidth: 800,
+		handles: {
+			'w': '#handle3'
+		}
+	});
+	$("#tab4").resizable({
+		maxWidth: 800,
+		handles: {
+			'w': '#handle4'
+		}
+	});
+	
+	$(".handle").mousedown(function() {
+		var parent = $(this).parent().get(0);
+		console.log($(parent).css('z-index'));
+		$(parent).css('z-index',5);
+	});
+	$("#handle1").mouseup(function() {
+		var parent = $(this).parent().get(0);
+		console.log($(parent).css("left"));
+		//$(this).animate({opacity:"0"},500);	
+		if(parseInt($(parent).css("left"),10) < 620){
+		//close all other tabs
+		}else{
+		//close this tab
+			//$(parent).animate({width:"10px"},1000);
+		}
+	});
 
-            }else{
-                $(this).animate({"left":729});
-            }
-        }
-    });
-/*
-
-    $( "#main div").draggable({stack: "#main div", handle: "p", axis:"x",
-        drag: function() {
-            console.log($(this).css("z-index",0));
-        }
-    });*/
   });
 
