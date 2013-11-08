@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Example Page</title>
+	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/component2.css" rel="stylesheet">
+	<script src="js/modern.js"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script type="text/javascript">
+		function changeScreenSize(w,h){
+			window.resizeTo(w,h);
+		}
+	</script>
+</head>
+<body onload="changeScreenSize(1351,1400)">
+    <h1>
+        4HC3 Assignment 2 - TV Remote Control
+    </h1>
+    <div class="container">
+        <div class="remote-container">
+            <div class="vol-container">
+		<section>  
+		    <a rel="external" href="#" id="button">&#xF011;</a>  
+		    <span></span>  
+		</section> 
+                <p>
+                <span id="vol-display">50</span>
+                </p>
+                <!--<div id="vol-control"></div>-->
+		<div style="width:100%">
+			<div class="colorful-slider blue">
+   			     <div class="slider-handle"></div>
+	 		</div>
+		</div>
+		<section style="margin-top:45px;">  
+		    <a rel="external" href="#" id="mute" class="on">&#xf026;</a>  
+		    <span></span>  
+		</section> 
+
+            </div>
+            <div id="main" class="main-container">
+		<div class="numpad-container">
+			<div class="typeChannel">
+				<span id="typeChannel"></span>
+			</div>
+			<table id="keypad" >
+			        <tr>
+				            <td id="keypad1" class=""><a href="#" class="keypadbutton">1</a></td>
+				            <td id="keypad2" class=""><a href="#" class="keypadbutton">2</a></td>
+				            <td id="keypad3" class=""><a href="#" class="keypadbutton">3</a></td>
+			        </tr>
+			        <tr>
+				            <td id="keypad4" class=""><a href="#" class="keypadbutton">4</a></td>
+				            <td id="keypad5" class=""><a href="#" class="keypadbutton">5</a></td>
+				            <td id="keypad6" class=""><a href="#" class="keypadbutton">6</a></td>
+			        </tr>
+			        <tr>
+				            <td id="keypad7" class=""><a href="#" class="keypadbutton">7</a></td>
+				            <td id="keypad8" class=""><a href="#" class="keypadbutton">8</a></td>
+				            <td id="keypad9" class=""><a href="#" class="keypadbutton">9</a></td>
+			        </tr>
+			        <tr>
+				            <td id="keypadclr" class=""><a href="#" class="keypadbutton">CLR</a></td>
+				            <td id="keypad0" class=""><a href="#" class="keypadbutton">0</a></td>
+				            <td id="keypadenter" class=""><a href="#" class="keypadbutton">OK</a></td>
+			        </tr>
+			</table>
+		</div>
+		<div class="channelup-container">
+			<div class="currentInput">
+				Current Input:<span id="displayInput">TV</span>
+			</div>
+			<div class="channelUp">
+		<section id="channelUp">  
+		    <a rel="external" href="#" >&#xF062;</a>  
+		</section> 
+			</div>
+			<div class="channelDisplay">
+				<span id="channelDisplay">1008</span>
+			</div>
+			<div class="channelDown">
+		<section id="channelDown">  
+		    <a rel="external" href="#" >&#xF063;</a>  
+		</section> 
+			</div>
+		</div>
+		<div id="tab1" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 1131px; width:10px; overflow:visible">
+			<div id="handle1" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabGuide1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 0px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
+		        <div id="content1">
+			<table id="tvguide">
+				<thead>
+					<th>8:00</th>
+					<th>8:30</th>
+					<th>9:00</th>
+					<th>9:30</th>
+					<th>10:00</th>
+				</thead>
+				<tbody>
+					<tr>asd</tr>
+					<tr>asd</tr>
+					<tr>asd</tr>
+					<tr>asd</tr>
+					<tr>asd</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>	
+		<div id="tab2" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 1131px; width: 10px">
+			<div id="handle2" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabPVR1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 130px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
+		        <div id="content2">
+
+				<button class="cn-button awesome" id="cn-button">&#xF04b;</button>
+				<div class="cn-wrapper opened-nav" id="cn-wrapper">
+				   <ul>
+				       <li><a href="#"><span class="awesome awesome2">&#xF112;</span></a></li>
+				       <li><a href="#"><span class="awesome rotateone">&#xF050;</span></a></li>
+				       <li id="stop"><a href="#"><span class="awesome">&#xf04d;</span></a></li>
+				       <li><a href="#"><span class="awesome rotatetwo">&#xF049;</span></a></li>
+				   </ul>
+				</div>
+				<div id="cn-overlay" class="cn-overlay"></div>
+	
+			</div>
+		</div>	
+		<div id="tab3" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 1131px; width:10px">
+			<div id="handle3" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabInputs1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 260px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
+		        <div id="content3">
+				<div id="inputs">
+					<div id="input-tv"><img src="TVTEXT.png" /></div>
+					<div id="input-av"><img src="AVTEXT.png" /></div>
+					<div id="input-hdmi"><img src="HDMITEXT.png" /></div>
+					<div id="input-vga"><img src="VGATEXT.png" /></div>
+				</div>
+			</div>
+		</div>	
+		<div id="tab4" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 93px; left: 1131px; width: 10px;">
+			<div id="handle4" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabSettings1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 390px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
+		        <div id="content4">
+				<ul id="settings">
+					<li><img src="PARENTALCONTROLSTEXT.png" /></li>
+					<li><img src="AUDIOSETTINGSTEXT.png" /></li>
+					<li><img src="VIDEOSETTINGSTEXT.png" /></li>
+					<li><img src="LOCALESETTINGSTEXT.png" /></li>
+				</ul>
+			</div>
+		</div>	
+            </div>
+        </div>
+        <div class="tv-container">
+        <video id="vids" controls="controls" poster="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="1010" height="410">
+	<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4" />
+	<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm" />
+	<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogg" />
+	<object type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" width="1010" height="410">
+		<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+		<param name="allowFullScreen" value="true" />
+		<param name="wmode" value="transparent" />
+		<param name="flashVars" value="config={'playlist':['http%3A%2F%2Fsandbox.thewikies.com%2Fvfe-generator%2Fimages%2Fbig-buck-bunny_poster.jpg',{'url':'http%3A%2F%2Fclips.vorwaerts-gmbh.de%2Fbig_buck_bunny.mp4','autoPlay':false}]}" />
+		<img alt="Big Buck Bunny" src="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="1010" height="410" title="No video playback capabilities, please download the video below" />
+	</object>
+</video> 
+        </div>
+    </div>
+
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/paper.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	<script src="js/remote.js"></script>
+	<script src="js/polyfills.js"></script>
+</body>
+</html>
