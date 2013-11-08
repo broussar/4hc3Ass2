@@ -99,6 +99,7 @@
 		},
 		start: function () {
 			closetabs(2,0,5);
+			$("#content2").hide();
 		},
 		stop: function () {
 			// check where we are and correct to proper position
@@ -113,6 +114,7 @@
 		},
 		start: function () {
 			closetabs(3,0,5);
+			$("#content3").hide();
 		},
 		stop: function () {
 			// check where we are and correct to proper position
@@ -152,7 +154,23 @@
     $('#button').click(function(){  
         $(this).toggleClass('on');
 	return false;  
-    }); 
+    });
+    $('#mute').click(function(){  
+        $(this).toggleClass('on');
+	return false;  
+    });
+$('#channelUp').click(function(){
+	var current = $('#channelDisplay').html();
+	current = parseInt(current,10) + 1;
+	$('#channelDisplay').html(current);
+	return false;
+}); 
+$('#channelDown').click(function(){
+	var current = $('#channelDisplay').html();
+	current = parseInt(current,10) - 1;
+	$('#channelDisplay').html(current);
+	return false;
+}); 
 
 $('.slider-handle').draggable({
         containment:'parent',
@@ -170,9 +188,11 @@ $('.slider-handle').draggable({
                 this.height = $(this).height();
                 this.color = $.trim(this.par.attr('class').replace('colorful-slider',''));
             }
-
+		console.log(this.parHeight);
+		console.log(this.height);
+		console.log(ui.position.top);
             var ratio = 1-(ui.position.top+this.height)/this.parHeight;
-		$("#vol-display").html(Math.round(ratio * 100));
+		$("#vol-display").html(Math.round(ratio * 100*1.06));
 
         }
     });
@@ -195,12 +215,14 @@ var button = document.getElementById('cn-button'),
  
   function handler(){
     if(!open){
-      this.innerHTML = "Play";
+      this.innerHTML = "&#xF04b;";
+	document.getElementById("vids").pause();
 //	$(wrapper).addClass("opened-nav");
 //      classie.add(wrapper, 'opened-nav');
     }
     else{
-      this.innerHTML = "Pause";
+      this.innerHTML = "&#xF04c;";
+	document.getElementById("vids").play();
   //  classie.remove(wrapper, 'opened-nav');
 //	$(wrapper).removeClass("opened-nav");
     }
@@ -211,6 +233,119 @@ var button = document.getElementById('cn-button'),
 //	$(wrapper).removeClass("opened-nav");
   }
  
+
+$("#keypad1").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur + "1";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypad2").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur + "2";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypad3").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur + "3";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypad4").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur + "4";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypad5").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur + "5";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypad6").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur + "6";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypad7").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur + "7";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypad8").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur + "8";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypad9").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur + "9";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypad0").click(function() {
+	var cur = $("#typeChannel").html();
+	if(cur.length > 0)
+		cur = cur + "0";
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypaddel").click(function() {
+	var cur = $("#typeChannel").html();
+	cur = cur.substring(0, cur.length - 1);
+	$("#typeChannel").html(cur); 
+	return false; 
+});
+$("#keypadclr").click(function() {
+	$("#typeChannel").html(""); 
+	return false; 
+});
+
+
+$("#keypadenter").click(function() {
+	var cur = $("#typeChannel").html();
+	if(cur.length > 0)
+		$("#channelDisplay").html(cur);
+	$("#typeChannel").html("");
+	return false; 
+});
+$("#input-tv").click(function() {
+	$("#displayInput").html("TV");
+});
+$("#input-av").click(function() {
+	$("#displayInput").html("AV");
+});
+$("#input-component").click(function() {
+	$("#displayInput").html("Component");
+});
+$("#input-vga").click(function() {
+	$("#displayInput").html("VGA");
+});
+$("#input-hdmi").click(function() {
+	$("#displayInput").html("HDMI");
+});
+$("#inputs div img").click(function(){
+	$("#inputs div").each(function(){
+		$(this).addClass("pushed");
+	});
+	var par = $(this).parent().get(0);
+	$(par).removeClass("pushed");
+});
+
+$("#stop").click(function(){
+	document.getElementById("vids").currentTime = 0;
+	document.getElementById("vids").pause();
+var button = document.getElementById('cn-button');
+      button.innerHTML = "&#xF04b;";
+	return false;
+
+});
+
 
  
   });

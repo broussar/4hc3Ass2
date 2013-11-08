@@ -14,9 +14,6 @@
         4HC3 Assignment 2 - TV Remote Control
     </h1>
     <div class="container">
-        <div class="tv-container">
-            TV
-        </div>
         <div class="remote-container">
             <div class="vol-container">
 		<section>  
@@ -32,62 +29,74 @@
    			     <div class="slider-handle"></div>
 	 		</div>
 		</div>
+		<section style="margin-top:45px;">  
+		    <a rel="external" href="#" id="mute" class="on">&#xf026;</a>  
+		    <span></span>  
+		</section> 
 
             </div>
             <div id="main" class="main-container">
-		<div class="title" style="width:100%;text-align:center;">
-			<img src="/remote/HOMETEXT.png" />
-		</div>
 		<div class="numpad-container">
+			<div class="typeChannel">
+				<span id="typeChannel"></span>
+			</div>
 			<table id="keypad" >
 			        <tr>
-				            <td class="key">1</td>
-				            <td class="key">2</td>
-				            <td class="key">3</td>
+				            <td id="keypad1" class=""><a href="#" class="keypadbutton">1</a></td>
+				            <td id="keypad2" class=""><a href="#" class="keypadbutton">2</a></td>
+				            <td id="keypad3" class=""><a href="#" class="keypadbutton">3</a></td>
 			        </tr>
 			        <tr>
-				            <td class="key">4</td>
-				            <td class="key">5</td>
-				            <td class="key">6</td>
+				            <td id="keypad4" class=""><a href="#" class="keypadbutton">4</a></td>
+				            <td id="keypad5" class=""><a href="#" class="keypadbutton">5</a></td>
+				            <td id="keypad6" class=""><a href="#" class="keypadbutton">6</a></td>
 			        </tr>
 			        <tr>
-				            <td class="key">7</td>
-				            <td class="key">8</td>
-				            <td class="key">9</td>
+				            <td id="keypad7" class=""><a href="#" class="keypadbutton">7</a></td>
+				            <td id="keypad8" class=""><a href="#" class="keypadbutton">8</a></td>
+				            <td id="keypad9" class=""><a href="#" class="keypadbutton">9</a></td>
 			        </tr>
 			        <tr>
-					    <td class="btn">DEL</td>
-				            <td class="key">0</td>
-				            <td class="btn">CLR</td>
+				            <td id="keypadclr" class=""><a href="#" class="keypadbutton">CLR</a></td>
+				            <td id="keypad0" class=""><a href="#" class="keypadbutton">0</a></td>
+				            <td id="keypadenter" class=""><a href="#" class="keypadbutton">OK</a></td>
 			        </tr>
 			</table>
 		</div>
 		<div class="channelup-container">
-			<button>Up</button>
-			<button>Down</button>
+			<div class="currentInput">
+				Current Input:<span id="displayInput">TV</span>
+			</div>
+			<div class="channelUp">
+		<section id="channelUp">  
+		    <a rel="external" href="#" >&#xF062;</a>  
+		</section> 
+			</div>
+			<div class="channelDisplay">
+				<span id="channelDisplay">1008</span>
+			</div>
+			<div class="channelDown">
+		<section id="channelDown">  
+		    <a rel="external" href="#" >&#xF063;</a>  
+		</section> 
+			</div>
 		</div>
 		<div id="tab1" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 1131px; width:10px; overflow:visible">
 			<div id="handle1" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabGuide1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 0px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
 		        <div id="content1">
-				<div class="title">
-					<img src="GUIDETEXT.png" />
-				</div>
 			</div>
 		</div>	
 		<div id="tab2" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 1131px; width: 10px">
-			<div id="handle2" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabDVR1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 130px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
+			<div id="handle2" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabPVR1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 130px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
 		        <div id="content2">
-				<div class="title">
-					<img src="DVRTEXT.png" />
-				</div>
 
-				<button class="cn-button" id="cn-button">Play</button>
+				<button class="cn-button awesome" id="cn-button">&#xF04b;</button>
 				<div class="cn-wrapper opened-nav" id="cn-wrapper">
 				   <ul>
-				       <li><a href="#"><span class="icon-picture">1</span></a></li>
-				       <li><a href="#"><span class="icon-headphones">2</span></a></li>
-				       <li><a href="#"><span class="icon-home">3</span></a></li>
-				       <li><a href="#"><span class="icon-facetime-video">4</span></a></li>
+				       <li><a href="#"><span class="awesome awesome2">&#xF112;</span></a></li>
+				       <li><a href="#"><span class="awesome rotateone">&#xF050;</span></a></li>
+				       <li id="stop"><a href="#"><span class="awesome">&#xf04d;</span></a></li>
+				       <li><a href="#"><span class="awesome rotatetwo">&#xF049;</span></a></li>
 				   </ul>
 				</div>
 				<div id="cn-overlay" class="cn-overlay"></div>
@@ -97,24 +106,17 @@
 		<div id="tab3" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 1131px; width:10px">
 			<div id="handle3" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabInputs1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 260px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
 		        <div id="content3">
-				<div class="title">
-					<img src="INPUTSTEXT.png" />
+				<div id="inputs">
+					<div id="input-tv"><img src="TVTEXT.png" /></div>
+					<div id="input-av"><img src="AVTEXT.png" /></div>
+					<div id="input-hdmi"><img src="HDMITEXT.png" /></div>
+					<div id="input-vga"><img src="VGATEXT.png" /></div>
 				</div>
-				<ul id="inputs">
-					<li><img src="TVTEXT.png" /></li>
-					<li><img src="AVTEXT.png" /></li>
-					<li><img src="COMPONENTTEXT.png" /></li>
-					<li><img src="HDMITEXT.png" /></li>
-					<li><img src="VGATEXT.png" /></li>
-				</ul>
 			</div>
 		</div>	
-		<div id="tab4" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 91px; left: 1131px; width: 10px;">
+		<div id="tab4" class="slide-out-div open" style="line-height: 1; position: absolute; height: 460px; top: 93px; left: 1131px; width: 10px;">
 			<div id="handle4" class="ui-resizable-handle ui-resizable-w handle" href="http://link-for-non-js-users" style="background-image: url(tabSettings1.png); width: 40px; height: 122px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 390px; left: -40px; background-repeat: no-repeat no-repeat;">Content</div>
 		        <div id="content4">
-				<div class="title">
-					<img src="SETTINGSTEXT.png" />
-				</div>
 				<ul id="settings">
 					<li><img src="PARENTALCONTROLSTEXT.png" /></li>
 					<li><img src="AUDIOSETTINGSTEXT.png" /></li>
@@ -124,6 +126,20 @@
 			</div>
 		</div>	
             </div>
+        </div>
+        <div class="tv-container">
+        <video id="vids" controls="controls" poster="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="1010" height="410">
+	<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4" />
+	<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm" />
+	<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogg" />
+	<object type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" width="1010" height="410">
+		<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+		<param name="allowFullScreen" value="true" />
+		<param name="wmode" value="transparent" />
+		<param name="flashVars" value="config={'playlist':['http%3A%2F%2Fsandbox.thewikies.com%2Fvfe-generator%2Fimages%2Fbig-buck-bunny_poster.jpg',{'url':'http%3A%2F%2Fclips.vorwaerts-gmbh.de%2Fbig_buck_bunny.mp4','autoPlay':false}]}" />
+		<img alt="Big Buck Bunny" src="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="1010" height="410" title="No video playback capabilities, please download the video below" />
+	</object>
+</video> 
         </div>
     </div>
 

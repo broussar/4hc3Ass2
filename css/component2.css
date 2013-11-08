@@ -111,9 +111,9 @@ body {
 	height: 12.5em;
 	border-radius: 50%;
 	background: #429a67;
-	background: -webkit-radial-gradient(transparent 35%, #429a67 35%);
-	background: -moz-radial-gradient(transparent 35%, #429a67 35%);
-	background: radial-gradient(transparent 35%, #429a67 35%);
+	background: -webkit-radial-gradient(transparent 35%, #4c5056 35%);
+	background: -moz-radial-gradient(transparent 35%, #4c5056 35%);
+	background: radial-gradient(transparent 35%, #4c5056 35%);
 	color: #fff;
 	text-align: center;
 	text-decoration: none;

@@ -3,13 +3,6 @@ body {
     background: url("img/wood.jpg");
     
 }
-.typeChannel{
-font-size:25px;
-text-align:center;
-width:50%;
-color:white;
-height:30px;
-}
 .title {
 width:100%;
 text-align:center;
@@ -27,8 +20,11 @@ color:white;
     TV related styles
 */
 .tv-container {
+    border: 5px solid red;
     width: 100%;
     height: 400px;
+    background: white;
+    display:none;
 }
 /* 
     Remote related styles
@@ -51,7 +47,6 @@ color:white;
     height:100%;
     padding:0px;
     overflow: hidden;
-	margin-top:50px;
 }
 #vol-control {
 margin:0 auto;
@@ -86,26 +81,8 @@ margin:0;
 background:blue;
 }
 
-.rotateone{
--webkit-transform: rotate(-90deg);
--moz-transform: rotate(-90deg);
--ms-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
-transform: rotate(-90deg);
 
-}
-
-.rotatetwo{
--webkit-transform: rotate(90deg);
--moz-transform: rotate(90deg);
--ms-transform: rotate(90deg);
--o-transform: rotate(90deg);
-transform: rotate(90deg);
-
-} 
-.awesome2{
-font-size:20px;
-}
+    
     .slide-out-div {
        padding: 20px;
         width: 800px;
@@ -165,7 +142,7 @@ font-size:20px;
 }
 
 section {  
-    margin: 10px auto 0;  
+    margin: 50px auto 0;  
     width: 75px;  
     height: 95px;  
     position: relative;  
@@ -178,10 +155,7 @@ section {
   font-style: normal;  
 } 
 */
-.awesome {
-    font-family: "FontAwesome";
-} 
- section a {  
+.vol-container section a {  
     font-family: "FontAwesome";  
     color: rgb(37,37,37);  
     text-shadow: 0px 1px 1px rgba(250,250,250,0.1);  
@@ -202,7 +176,7 @@ section {
     line-height: 79px;
 	margin-bottom:7px; 
 }
- section a:before {  
+.vol-container section a:before {  
     content: "";  
     width: 80px;  
     height: 80px;  
@@ -231,7 +205,7 @@ section a + span {
     left: 42%;  
 }
 
-section a:active {  
+.vol-container section a:active {  
     box-shadow: 0px 0px 0px 0px rgb(34,34,34), /* 1st Shadow */  
                 0px 3px 7px 0px rgb(17,17,17), /* 2nd Shadow */  
                 inset 0px 1px 1px 0px rgba(250, 250, 250, .2), /* 3rd Shadow */   
@@ -240,7 +214,7 @@ section a:active {
     top: 3px;  
 }
 
-section a:target {  
+.vol-container section a:target {  
     box-shadow: 0px 0px 0px 0px rgb(34,34,34),  
                 0px 3px 7px 0px rgb(17,17,17),   
                 inset 0px 1px 1px 0px rgba(250, 250, 250, .2),   
@@ -251,7 +225,7 @@ section a:target {
     text-shadow: 0px 0px 3px rgb(250,250,250);  
 }
 
-section a:active:before, section a:target:before {  
+.vol-container section a:active:before, section a:target:before {  
     top: -5px;  
     background-color: rgb(26,27,29);  
     box-shadow: 0px 1px 0px 0px rgba(250,250,250,0.1),   
@@ -264,7 +238,7 @@ section a:target + span {
     background-color: rgb(135,187,83);  
 }
 
- section a {  
+.vol-container section a {  
 transition: color 350ms, text-shadow 350ms;  
     -o-transition: color 350ms, text-shadow 350ms;  
     -moz-transition: color 350ms, text-shadow 350ms;  
@@ -293,19 +267,14 @@ section a.on + span {
     background-color: rgb(135,187,83);  
 }
 .numpad-container {
-	width: 40%;
+	width: 25%;
  	float: left;
 	margin-left: 75px;
-}
-.currentInput {
-color: white;
-font-size: 35px;
 }
 
 .channelup-container {
 	float: left;
-	width: 35%;
-	text-align:center;
+	width: 25%;
 }
 #settings, #inputs {
 	text-align:center;
@@ -314,14 +283,9 @@ font-size: 35px;
 #settings li img {
 	width:500px;
 }
-#inputs div img {
+#inputs li img {
 	width:135px;
-	cursor:pointer;
 }
-.pushed{
-	padding-left:90px;
-}
-
 
 /* Styling the sliders */
 
@@ -377,7 +341,6 @@ font-size: 35px;
 color:#4fd2f9 ;
 text-align: center;
 font-size: 35px;
-margin:2px;
 }
 
 
