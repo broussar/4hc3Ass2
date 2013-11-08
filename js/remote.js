@@ -22,7 +22,7 @@
         $( "#vol-display" ).html( ui.value );
       }
     });
-    $( "#vol-display" ).html( $( "#vol-control" ).slider( "value" ) );
+    //$( "#vol-display" ).html( $( "#vol-control" ).slider( "value" ) );
 	//changes z-index
 	function closetabs(current,other,current){
 		for(var i = 1; i < 5;i++)
@@ -152,6 +152,66 @@
     $('#button').click(function(){  
         $(this).toggleClass('on');
 	return false;  
-    });  
+    }); 
+
+$('.slider-handle').draggable({
+        containment:'parent',
+        axis:'y',
+        drag:function(e,ui){
+
+            /* The drag function is called on every drag movement, no matter how minute */
+
+            if(!this.par)
+            {
+                /* Initializing the variables only on the first drag move for performance */
+
+                this.par = $(this).parent();
+                this.parHeight = this.par.height();
+                this.height = $(this).height();
+                this.color = $.trim(this.par.attr('class').replace('colorful-slider',''));
+            }
+
+            var ratio = 1-(ui.position.top+this.height)/this.parHeight;
+		$("#vol-display").html(Math.round(ratio * 100));
+
+        }
+    });
+
+
+
+
+
+
+
+
+
+var button = document.getElementById('cn-button'),
+    wrapper = document.getElementById('cn-wrapper');
+ 
+    //open and close menu when the button is clicked
+  var open = false;
+  button.addEventListener('click', handler, false);
+  button.addEventListener('focus', handler, false);
+ 
+  function handler(){
+    if(!open){
+      this.innerHTML = "Close";
+	$(wrapper).addClass("opened-nav");
+//      classie.add(wrapper, 'opened-nav');
+    }
+    else{
+      this.innerHTML = "Menu";
+  //  classie.remove(wrapper, 'opened-nav');
+	$(wrapper).removeClass("opened-nav");
+    }
+    open = !open;
+  }
+  function closeWrapper(){
+    //classie.remove(wrapper, 'opened-nav');
+	$(wrapper).removeClass("opened-nav");
+  }
+ 
+
+ 
   });
 
