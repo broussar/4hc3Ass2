@@ -3,7 +3,10 @@ body {
     background: url("img/wood.jpg");
     
 }
-
+.title {
+width:100%;
+text-align:center;
+}
 h1 {
 text-align:center;
 }
@@ -30,16 +33,16 @@ text-align:center;
     border: 5px solid black;
     height: 500px;
     width: 100%;
-    background:white;
+    background:url("img/steel.jpg");
 }
 .vol-container {
-    width: 19%;
+    width: 190px;
     float:left;
 }
 .main-container {
-    width:80%;
+    width:809px;
     float:left;
-    border-left: 1px solid red;
+  /*  border-left: 1px solid red;*/
     height:100%;
     padding:0px;
     overflow: hidden;
@@ -65,7 +68,7 @@ border: 1px solid blue;
 -o-transform: rotate(-90deg);
 transform: rotate(-90deg);*/
 cursor:pointer;
-background:beige;
+background:rgba(0, 0, 0, 0.8);
 }
 
 .tab-content {
@@ -82,8 +85,8 @@ background:blue;
     .slide-out-div {
        padding: 20px;
         width: 800px;
-        background: #f2f2f2;
-        border: #29216d 2px solid;
+        background:rgba(0, 0, 0, 0.8);
+    /*    border: #29216d 2px solid;*/
     }
 #wrap {
 	position: relative;
@@ -101,4 +104,175 @@ background:blue;
 
 .ui-resizable-helper { border: 1px dotted gray; }
 	
+#keypad{
+    width:150px;
+    height:200px;
+    top:22px;
+    left:1px;
+}
+.key{
+    border:solid 1px black;
+    background-color:blue;
+    text-align:center;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+}
+.key:hover{
+    background-color:LightBlue;
+}
+.key:active{
+    background-color:white;
+}
+.btn{
+    border:solid 1px black;
+    text-align:center;
+    font-weight:bold;
+    color:black;
+    cursor:pointer;
+    background-color:DimGray;
+    width:33.3%;
+}
+.btn:hover{
+    background-color:DarkGray;
+}
+.btn:active{
+    background-color:LightGray;
+}
 
+section {  
+    margin: 50px auto 0;  
+    width: 75px;  
+    height: 95px;  
+    position: relative;  
+    text-align: center;  
+}
+
+/*@font-face {  
+  font-family: "FontAwesome";  
+  font-weight: normal;  
+  font-style: normal;  
+} 
+*/
+.vol-container section a {  
+    font-family: "FontAwesome";  
+    color: rgb(37,37,37);  
+    text-shadow: 0px 1px 1px rgba(250,250,250,0.1);  
+    font-size: 32pt;  
+    display: block;  
+    position: relative;  
+    text-decoration: none;  
+    background-color: rgb(83,87,93);  
+    box-shadow: 0px 3px 0px 0px rgb(34,34,34), /* 1st Shadow */  
+                0px 7px 10px 0px rgb(17,17,17), /* 1nd Shadow */  
+                inset 0px 1px 1px 0px rgba(250, 250, 250, .2), /* 3rd Shadow */   
+                inset 0px -12px 35px 0px rgba(0, 0, 0, .5); /* 4th Shadow */  
+    width: 70px;  
+    height: 70px;  
+    border: 0;  
+    border-radius: 35px;  
+    text-align: center;  
+    line-height: 79px;
+	margin-bottom:7px; 
+}
+.vol-container section a:before {  
+    content: "";  
+    width: 80px;  
+    height: 80px;  
+    display: block;  
+    z-index: -2;  
+    position: absolute;  
+    background-color: rgb(26,27,29);  
+    left: -5px;  
+    top: -2px;  
+    border-radius: 40px;  
+    box-shadow: 0px 1px 0px 0px rgba(250,250,250,0.1),   
+    		inset 0px 1px 2px rgba(0, 0, 0, 0.5);  
+}
+
+section a + span {  
+    display: block;  
+    width: 8px;  
+    height: 8px;  
+    background-color: rgb(226,0,0);  
+    box-shadow: inset 0px 1px 0px 0px rgba(250,250,250,0.5),  
+                0px 0px 3px 2px rgba(226,0,0,0.5);  
+    border-radius: 4px;  
+    clear: both;  
+    position: absolute;  
+    bottombottom: 0;  
+    left: 42%;  
+}
+
+.vol-container section a:active {  
+    box-shadow: 0px 0px 0px 0px rgb(34,34,34), /* 1st Shadow */  
+                0px 3px 7px 0px rgb(17,17,17), /* 2nd Shadow */  
+                inset 0px 1px 1px 0px rgba(250, 250, 250, .2), /* 3rd Shadow */   
+                inset 0px -10px 35px 5px rgba(0, 0, 0, .5); /* 4th Shadow */  
+    background-color: rgb(83,87,93);  
+    top: 3px;  
+}
+
+.vol-container section a:target {  
+    box-shadow: 0px 0px 0px 0px rgb(34,34,34),  
+                0px 3px 7px 0px rgb(17,17,17),   
+                inset 0px 1px 1px 0px rgba(250, 250, 250, .2),   
+                inset 0px -10px 35px 5px rgba(0, 0, 0, .5);  
+    background-color: rgb(83,87,93);  
+    top: 3px;  
+    color: #fff;  
+    text-shadow: 0px 0px 3px rgb(250,250,250);  
+}
+
+.vol-container section a:active:before, section a:target:before {  
+    top: -5px;  
+    background-color: rgb(26,27,29);  
+    box-shadow: 0px 1px 0px 0px rgba(250,250,250,0.1),   
+                inset 0px 1px 2px rgba(0, 0, 0, 0.5);  
+}
+
+section a:target + span {  
+    box-shadow: inset 0px 1px 0px 0px rgba(250,250,250,0.5),  
+                0px 0px 3px 2px rgba(135,187,83,0.5);  
+    background-color: rgb(135,187,83);  
+}
+
+.vol-container section a {  
+transition: color 350ms, text-shadow 350ms;  
+    -o-transition: color 350ms, text-shadow 350ms;  
+    -moz-transition: color 350ms, text-shadow 350ms;  
+    -webkit-transition: color 350ms, text-shadow 350ms;  
+}  
+
+section a.on {  
+    box-shadow: 0px 0px 0px 0px rgb(34,34,34),  
+                0px 3px 7px 0px rgb(17,17,17),   
+                inset 0px 1px 1px 0px rgba(250, 250, 250, .2),   
+                inset 0px -10px 35px 5px rgba(0, 0, 0, .5);  
+    background-color: rgb(83,87,93);  
+    top: 3px;  
+    color: #fff;  
+    text-shadow: 0px 0px 3px rgb(250,250,250);  
+}  
+section a:active:before, section a.on:before {  
+    top: -5px;  
+    background-color: rgb(26,27,29);  
+    box-shadow: 0px 1px 0px 0px rgba(250,250,250,0.1),   
+                inset 0px 1px 2px rgba(0, 0, 0, 0.5);  
+}  
+section a.on + span {  
+    box-shadow: inset 0px 1px 0px 0px rgba(250,250,250,0.5),  
+                0px 0px 3px 2px rgba(135,187,83,0.5);  
+    background-color: rgb(135,187,83);  
+}
+.numpad-container {
+	width: 25%;
+ 	float: left;
+	margin-left: 75px;
+}
+
+.channelup-container {
+	float: left;
+	width: 25%;
+}
+}
