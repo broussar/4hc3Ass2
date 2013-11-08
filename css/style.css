@@ -9,6 +9,7 @@ text-align:center;
 }
 h1 {
 text-align:center;
+color:white;
 }
 
 .container {
@@ -275,4 +276,13 @@ section a.on + span {
 	float: left;
 	width: 25%;
 }
+#settings, #inputs {
+	text-align:center;
+	width: 90%;
+}
+#settings li img {
+	width:500px;
+}
+#inputs li img {
+	width:135px;
 }

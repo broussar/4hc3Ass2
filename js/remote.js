@@ -63,10 +63,9 @@
 		if(parseInt($(currentTab).css("width"),10) > 420)
 		{
 			//open current tab
-			$(currentTab).animate({"left":"370px","width":"768px"},500);
+			$(currentTab).animate({"left":"370px","width":"768px"},500,function() {$("#content" + id).show();});
 			closetabs(id,5,0);
 			closetabs2(id);
-			$("#content" + id).show();
 			
 		}else{
 			//close current tab
@@ -83,6 +82,7 @@
 		start: function () {
 			//increase z index
 			closetabs(1,0,5);
+			$("#content1").hide();
 			//decrease of z index
 			//fade content until it is visible
 		},
@@ -127,6 +127,7 @@
 		},
 		start: function () {
 			closetabs(4,0,5);
+			$("#content4").hide();
 		},
 		stop: function () {
 			// check where we are and correct to proper position
@@ -149,7 +150,8 @@
 
 	
     $('#button').click(function(){  
-        $(this).toggleClass('on');  
+        $(this).toggleClass('on');
+	return false;  
     });  
   });
 
