@@ -21,7 +21,6 @@
     <div class="container">
         <div class="remote-container">
             <div class="vol-container">
-		<p font-size:30px">TV Power</p>
 		<section>  
 		    <a rel="external" href="#" id="button">&#xF011;</a>  
 		    <span></span>  
